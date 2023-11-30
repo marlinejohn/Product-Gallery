@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import ProductFilter from './ProductFilter'
+import FilteredProducts from './FilteredProducts'
 import './App.css'
 
 function App() {
   return (
     <div>
-      <ProductFilter />
+      <FilteredProducts />
     </div>
   )
 }
