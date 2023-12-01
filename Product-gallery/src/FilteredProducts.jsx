@@ -4,14 +4,22 @@ import Product from "./product.json";
 function FilteredProducts() {
     const [items, setItems] = useState(Product)
     console.log(Product)
+
+    const filteredItems =(catItem) =>{
+        const updatedItems = Product.filter((curItem)=>{
+            return curItem.category === catItem
+        });
+        setItems(updatedItems)
+    }
+
     return(
         <div className="container mt-5">
             <h1>My Products</h1>
-            <button type="button" class="btn btn-primary me-3 ">All Products</button>
-            <button type="button" class="btn btn-primary me-3">Secondary</button>
-            <button type="button" class="btn btn-primary me-3">Success</button>
-            <button type="button" class="btn btn-primary me-3">Danger</button>
-            <button type="button" class="btn btn-primary ">Warning</button>
+            <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>setItems(Product)}>All Products</button>
+            <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("men's clothing")}>Men's Clothing</button>
+            <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("women's clothing")}>Women's Clothing</button>
+            <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("jewelery")}>Jewelery</button>
+            <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("electronics")}>Electronics</button>
 
             <hr />
             <div className="row">
