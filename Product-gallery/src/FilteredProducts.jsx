@@ -3,7 +3,7 @@ import Product from "./product.json";
 
 function FilteredProducts() {
     const [items, setItems] = useState(Product)
-    console.log(Product)
+    
 
     const filteredItems =(catItem) =>{
         const updatedItems = Product.filter((curItem)=>{
@@ -20,7 +20,7 @@ function FilteredProducts() {
             <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("women's clothing")}>Women's Clothing</button>
             <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("jewelery")}>Jewelery</button>
             <button type="button" class="btn btn-primary me-3 my-3" onClick={()=>filteredItems("electronics")}>Electronics</button>
-
+            
             <hr />
             <div className="row">
             {items.map((val) =>(
